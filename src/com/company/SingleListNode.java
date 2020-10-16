@@ -13,7 +13,7 @@ public class SingleListNode {
         return this.element;
     }
 
-    public Object getNext() {
+    public SingleListNode getNext() {
         return this.nextNode;
     }
 
