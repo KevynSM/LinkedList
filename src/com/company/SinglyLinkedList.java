@@ -12,6 +12,14 @@ public class SinglyLinkedList {
         this.count = 0;
     }
 
+    public SingleListNode getHead() {
+        return this.head;
+    }
+
+    public boolean isEmpty() {
+        return (this.count == 0);
+    }
+
     public Object getFirst() {
         if (this.count == 0) {
             throw new Exception("Lista vazia");
@@ -133,9 +141,13 @@ public class SinglyLinkedList {
                 }
                 previousNode.setNext(selectedNode.getNext());
                 this.count--;
-                return selectedNode;
+                return selectedNode.getElement();
             }
         }
+    }
+
+    public SinglyLinkedListIterator iterator() {
+        return new SinglyLinkedListIterator(this);
     }
 
 }
