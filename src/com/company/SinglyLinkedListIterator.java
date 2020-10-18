@@ -32,5 +32,5 @@ public class SinglyLinkedListIterator {
             this.position = this.linkedList.getHead();
         }
     }
-    
+
 }
