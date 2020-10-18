@@ -20,23 +20,23 @@ public class SinglyLinkedList {
         return (this.count == 0);
     }
 
-    public Object getFirst() {
+    public Object getFirst() throws EmptyListException{
         if (this.count == 0) {
-            throw new Exception("Lista vazia");
+            throw new EmptyListException();
         }
         return this.head.getElement();
     }
 
-    public Object getLast() {
+    public Object getLast() throws EmptyListException {
         if (this.count == 0) {
-            throw new Exception("Lista vazia");
+            throw new EmptyListException();
         }
         return this.tail.getElement();
     }
 
-    public Object get(int position) {
+    public Object get(int position) throws EmptyListException {
         if (this.count == 0) {
-            throw new Exception("Lista vazia");
+            throw new EmptyListException();
         }
         SingleListNode currentNode = this.head;
         for (int i = 0; i < position; i++) {
@@ -66,9 +66,9 @@ public class SinglyLinkedList {
         this.count++;
     }
 
-    public void insert(Object element, int position) {
+    public void insert(Object element, int position) throws InvalidPositionException {
         if (position < 0 || position > this.count) {
-            throw new Exception("Posição invalida");
+            throw new InvalidPositionException();
         }
         else {
             if (position == 0) {
@@ -89,9 +89,9 @@ public class SinglyLinkedList {
         }
     }
 
-    public Object removerFirst() {
+    public Object removerFirst() throws EmptyListException {
         if (this.count == 0) {
-            throw new Exception("Lista vazia");
+            throw new EmptyListException();
         }
         else {
             SingleListNode lastHead = this.head;
@@ -101,9 +101,9 @@ public class SinglyLinkedList {
         }
     }
 
-    public Object removeLast() {
+    public Object removeLast() throws EmptyListException {
         if (this.count == 0) {
-            throw new Exception("Lista vazia");
+            throw new EmptyListException();
         }
         else {
             SingleListNode lastTail = this.tail;
@@ -118,12 +118,12 @@ public class SinglyLinkedList {
         }
     }
 
-    public Object remove(int position) {
+    public Object remove(int position) throws InvalidPositionException, EmptyListException {
         if (this.count == 0) {
-            throw new Exception("Lista vazia");
+            throw new EmptyListException();
         }
         if (position < 0 || position >= this.count) {
-            throw new Exception("Posição invalida");
+            throw new InvalidPositionException();
         }
         else {
             if (position == 0) {

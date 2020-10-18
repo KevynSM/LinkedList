@@ -13,14 +13,14 @@ public class SinglyLinkedListIterator {
         return (this.position != null);
     }
 
-    public Object next() {
+    public Object next() throws NoSuchElementException {
         if (this.hasNext()) {
             Object element = this.position.getElement();
             this.position = this.position.getNext();
             return element;
         }
         else {
-            throw new Exception("Não há elemento");
+            throw new NoSuchElementException();
         }
     }
 
