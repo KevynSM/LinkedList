@@ -1,4 +1,6 @@
-package com.company;
+package com.lists;
+
+import com.exceptions.NoSuchElementException;
 
 public class SinglyLinkedListIterator {
     private SinglyLinkedList linkedList;

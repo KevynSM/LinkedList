@@ -1,4 +1,4 @@
-package com.company;
+package com.exceptions;
 
 public class EmptyListException extends  Exception {
     public EmptyListException() {

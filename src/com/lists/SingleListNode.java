@@ -1,4 +1,4 @@
-package com.company;
+package com.lists;
 
 public class SingleListNode {
     private Object element;

@@ -1,5 +1,8 @@
-package com.company;
+package com.lists;
 
+
+import com.exceptions.EmptyListException;
+import com.exceptions.InvalidPositionException;
 
 public class SinglyLinkedList {
     private SingleListNode head;
@@ -20,7 +23,7 @@ public class SinglyLinkedList {
         return (this.count == 0);
     }
 
-    public Object getFirst() throws EmptyListException{
+    public Object getFirst() throws EmptyListException {
         if (this.count == 0) {
             throw new EmptyListException();
         }
