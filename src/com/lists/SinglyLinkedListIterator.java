@@ -16,14 +16,12 @@ public class SinglyLinkedListIterator {
     }
 
     public Object next() throws NoSuchElementException {
-        if (this.hasNext()) {
-            Object element = this.position.getElement();
-            this.position = this.position.getNext();
-            return element;
-        }
-        else {
+        if (!this.hasNext()) {
             throw new NoSuchElementException();
         }
+        Object element = this.position.getElement();
+        this.position = this.position.getNext();
+        return element;
     }
 
     public void rewind() {
