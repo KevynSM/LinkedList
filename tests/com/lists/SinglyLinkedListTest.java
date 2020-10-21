@@ -16,7 +16,7 @@ class SinglyLinkedListTest {
             this.list.insertLast("element " + (i + 1));
         }
     }
-    
+
     @Test
     void isEmpty() {
         assertTrue(list.isEmpty());
