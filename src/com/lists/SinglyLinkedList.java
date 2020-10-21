@@ -15,6 +15,10 @@ public class SinglyLinkedList {
         this.count = 0;
     }
 
+    public int size() {
+        return this.count;
+    }
+
     public SingleListNode getHead() {
         return this.head;
     }
