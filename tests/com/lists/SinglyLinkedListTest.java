@@ -18,10 +18,31 @@ class SinglyLinkedListTest {
     }
 
     @Test
+    void SinglyLinkedList() {
+        assertTrue(this.list instanceof SinglyLinkedList);
+    }
+
+    @Test
+    void size() {
+        assertEquals(this.list.size(), 0);
+        addElements(2);
+        assertEquals(this.list.size(), 2);
+        addElements(2);
+        assertEquals(this.list.size(), 4);
+    }
+
+    @Test
+    void getHead() throws EmptyListException {
+        assertNull(this.list.getHead());
+        addElements(1);
+        assertEquals(this.list.getHead().getElement(), this.list.get(0));
+    }
+
+    @Test
     void isEmpty() {
-        assertTrue(list.isEmpty());
-        this.addElements(1);
-        assertFalse(list.isEmpty());
+        assertTrue(this.list.isEmpty());
+        addElements(1);
+        assertFalse(this.list.isEmpty());
     }
 
     @Test
@@ -78,12 +99,14 @@ class SinglyLinkedListTest {
         assertThrows(InvalidPositionException.class, () -> {
             this.list.insert("element ?", this.list.size()+1);
         });
+        addElements(10);
         this.list.insert("element 0", 0);
         assertEquals(this.list.getFirst(), "element 0");
+        addElements(10);
+        this.list.insert("new element", 5);
+        assertEquals(this.list.get(5), "new element");
         this.list.insert("last element", this.list.size());
         assertEquals(this.list.getLast(), "last element");
-        this.list.insert("element new 2", 1);
-        assertEquals(this.list.get(1), "element new 2");
     }
 
     @Test
@@ -115,8 +138,9 @@ class SinglyLinkedListTest {
         assertThrows(InvalidPositionException.class, () -> {
             this.list.remove(10);
         });
+        assertEquals(this.list.remove(5), "element 6");
         assertEquals(this.list.remove(0), "element 1");
-        assertEquals(this.list.remove(8), "element 10");
+        assertEquals(this.list.remove(7), "element 10");
     }
 
     @Test

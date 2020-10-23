@@ -7,6 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class SingleListNodeTest {
 
     @Test
+    void SingleListNode() {
+        assertTrue(new SingleListNode("element", null) instanceof SingleListNode);
+    }
+
+    @Test
     void getElement() {
         SingleListNode first_node = new SingleListNode("element 1", null);
         assertEquals(first_node.getElement(), "element 1");
